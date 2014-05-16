@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('testApp')
-    .controller('MainCtrl', ['$scope', '$log', 'backendApi', function ($scope, $log, backendApi) {
+    .controller('MainCtrl', function ($scope, $log, backendApi) {
 
         $scope.list = {};
 
@@ -10,4 +10,4 @@ angular.module('testApp')
                 $scope.list = [ greeting ];
             })
 
-    }]);
+    });
