@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('testApp')
-    .factory('backendApi', function ($resource) {
+    .factory('backendApi', ['$resource', function ($resource) {
 
         var api = {};
 
@@ -16,4 +16,4 @@ angular.module('testApp')
 
         return api;
 
-    });
+    }]);

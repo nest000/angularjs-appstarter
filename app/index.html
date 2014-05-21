@@ -1,8 +1,6 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -17,26 +15,33 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+      <style>
+          .drop-shadow {
+              -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
+              box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
+          }
+          .container.drop-shadow {
+              padding-left:0;
+              padding-right:0;
+          }
+      </style>
   </head>
+
   <body ng-app="testApp">
 
     <div id="main" class="container" role="main">
         <div class="row">
           <div class="header">
-              <ul class="nav nav-pills pull-right">
-                  <li><a ng-href="/#/">Home</a></li>
-                  <li><a ng-href="/#/auth">Auth</a></li>
+              <ul class="nav nav-pills pull-right" bs-navbar>
+                  <li data-match-route="/"><a ng-href="/#/">Home</a></li>
+                  <li data-match-route="/auth"><a ng-href="/#/auth">Auth</a></li>
               </ul>
               <h3 class="text-muted">test-app</h3>
           </div>
         </div>
-        <div class="well" ng-view=""></div>
+        <div class="well drop-shadow" ng-view=""></div>
     </div>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -47,7 +52,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -56,6 +61,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/factories/backend-api.js"></script>
     <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/directives/bs-navbar.js"></script>
     <!-- endbuild -->
 
   </body>

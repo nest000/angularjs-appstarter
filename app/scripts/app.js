@@ -7,7 +7,7 @@ angular
         'ngSanitize',
         'ngRoute'
     ])
-    .config(function ($routeProvider, $httpProvider, $locationProvider) {
+    .config(function ($routeProvider, $httpProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -18,10 +18,8 @@ angular
                 controller: 'AuthCtrl'
             })
             .otherwise({
-                redirectTo: '/'
+                templateUrl: '404.html'
             });
 
         $httpProvider.defaults.useXDomain = true;
-
-        //$locationProvider.html5Mode(true);
     });
