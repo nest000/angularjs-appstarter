@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('testApp')
-    .controller('MainCtrl', function ($scope, $log, backendApi) {
+    .controller('MainCtrl', function ($scope, $resource, $log, backendApi) {
 
-        $scope.list = {};
-
-        backendApi.getGreeting()
-            .success(function(greeting) {
-                $scope.list = [ greeting ];
-            })
+        //$scope.doSearch = function() {
+            backendApi.getResult(function(res) {
+                $scope.apiResult = res;
+            });
+        //}
 
     });

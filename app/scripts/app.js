@@ -7,7 +7,7 @@ angular
         'ngSanitize',
         'ngRoute'
     ])
-    .config(function ($routeProvider, $httpProvider) {
+    .config(function ($routeProvider, $httpProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -22,4 +22,6 @@ angular
             });
 
         $httpProvider.defaults.useXDomain = true;
+
+        //$locationProvider.html5Mode(true);
     });

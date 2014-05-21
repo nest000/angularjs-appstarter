@@ -1,15 +1,19 @@
 'use strict';
 
 angular.module('testApp')
-    .factory('backendApi', ['$http', function ($http) {
+    .factory('backendApi', function ($resource) {
 
-        var baseUrl = 'http://rest-service.guides.spring.io';
         var api = {};
 
-        api.getGreeting = function () {
-            return $http.get(baseUrl + '/greeting');
-        };
+        var twitterResource = $resource('http://public-api.wordpress.com/rest/v1/sites/:page/:action',
+            { callback: 'JSON_CALLBACK' },
+            { get: { method: 'JSONP'} }
+        );
+
+        api.getResult = function(callback) {
+            twitterResource.get({ action: 'posts', page: 'wtmpeachtest.wordpress.com' }, callback);
+        }
 
         return api;
 
-    }]);
+    });
