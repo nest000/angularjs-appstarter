@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -16,53 +16,57 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-      <style>
-          .drop-shadow {
-              -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
-              box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
-          }
-          .container.drop-shadow {
-              padding-left:0;
-              padding-right:0;
-          }
-      </style>
-  </head>
+    <style>
+        .drop-shadow {
+            -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
+            box-shadow: 0 0 7px 2px rgba(0, 0, 0, .1);
+        }
 
-  <body ng-app="testApp">
+        .container.drop-shadow {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
+</head>
 
-    <div id="main" class="container" role="main">
-        <div class="row">
-          <div class="header">
-              <ul class="nav nav-pills pull-right" bs-navbar>
-                  <li data-match-route="/"><a ng-href="/#/">Home</a></li>
-                  <li data-match-route="/auth"><a ng-href="/#/auth">Auth</a></li>
-              </ul>
-              <h3 class="text-muted">test-app</h3>
-          </div>
+<body ng-app="testApp">
+
+<div id="main" class="container" role="main">
+    <div class="row">
+        <div class="header">
+            <ul class="nav nav-pills pull-right" bs-navbar>
+                <li data-match-route="/"><a ng-href="/#/">Home</a></li>
+                <li data-match-route="/wordpress-api"><a ng-href="/#/wordpress-api">WordpressApi</a></li>
+                <li data-match-route="/auth"><a ng-href="/#/auth">Auth</a></li>
+            </ul>
+            <h3 class="text-muted">test-app</h3>
         </div>
-        <div class="well drop-shadow" ng-view=""></div>
     </div>
+    <div class="well drop-shadow" ng-view=""></div>
+</div>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-    <!-- endbower -->
-    <!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/factories/wordpress-api.js"></script>
+<script src="scripts/controllers/auth.js"></script>
+<script src="scripts/directives/bs-navbar.js"></script>
+<script src="scripts/factories/auth-token.js"></script>
+<script src="scripts/controllers/wordpress-api.js"></script>
+<!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/factories/backend-api.js"></script>
-    <script src="scripts/controllers/auth.js"></script>
-    <script src="scripts/directives/bs-navbar.js"></script>
-    <!-- endbuild -->
-
-  </body>
+</body>
 </html>

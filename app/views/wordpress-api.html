@@ -1,0 +1,17 @@
+<p>
+    Pages
+    <select ng-options="page for page in pages" ng-model="page"></select>
+</p>
+
+<div ng-repeat="entry in apiResult.posts">
+    <img class="img-thumbnail" ng-src="{{ entry.author.avatar_URL }}"/>
+
+    <h2><a href="{{ entry.URL }}" target="_blank">{{ entry.title }}</a></h2>
+    <span class="label label-info">written from {{ entry.author.nice_name }} on {{ entry.date | date }}</span>
+
+    <p>
+
+    <div ng-bind-html="entry.content"></div>
+    <div ng-bind-html="entry.excerpt"></div>
+    </p>
+</div>

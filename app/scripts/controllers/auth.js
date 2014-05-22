@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('testApp')
-  .controller('AuthCtrl', function ($scope) {
+  .controller('AuthCtrl', ['$scope', 'authToken', function ($scope, authToken) {
 
         $scope.login = function() {
-            alert($scope.userEmail + ' :: ' + $scope.userPass);
+            $scope.token = authToken.getToken({
+                user : $scope.userEmail,
+                pass : $scope.userPass
+            });
         }
-  });
+  }]);
