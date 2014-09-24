@@ -25,4 +25,11 @@ app.config(function ($routeProvider, $httpProvider) {
         .otherwise({
             templateUrl: '404.html'
         });
+
+    $httpProvider.responseInterceptors.push('httpInterceptor');
+
+});
+
+app.run(function (api) {
+    api.init();
 });
